@@ -58,10 +58,12 @@
 								<!-- bot_left_top -->
 								<!--<TextBlock Text="bot_left_top" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>-->
 								<Grid Grid.Row="0">
-									<ListBox x:Name="itemListBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding Items}">
+									<ListBox x:Name="itemListBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding Items}" SelectionMode="Single">
 										<ListBox.ItemTemplate>
 											<DataTemplate>
-												<TextBlock Text="{Binding}" />
+												<StackPanel Orientation="Horizontal">
+													<Button Content="{Binding}" Click="OnItemClicked" />
+												</StackPanel>
 											</DataTemplate>
 										</ListBox.ItemTemplate>
 									</ListBox>
