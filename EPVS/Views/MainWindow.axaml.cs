@@ -7,8 +7,18 @@ using Avalonia.Interactivity;
 using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace EPVS.Views;
+
+public class FileItem
+{
+    public string Name { get; set; }
+    public string Icon { get; set; }
+}
+
+
 
 public partial class MainWindow : Window
 {
@@ -18,8 +28,10 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         _fileListBox = this.FindControl<ListBox>("fileListBox");
+        
         //LoadFileList();
-        LoadFileSystemEntries();
+        //LoadFileSystemEntries();
+        LoadFileList3();
 
     }
 
@@ -44,6 +56,57 @@ public partial class MainWindow : Window
             _fileListBox.Items.Add(Path.GetFileName(entry));
         }
     }
+
+    private void LoadFileList2()
+    {
+        string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string[] fileSystemEntries = Directory.GetFileSystemEntries(directoryPath);
+
+        List<FileItem> items = new List<FileItem>();
+
+        foreach (string entry in fileSystemEntries)
+        {
+            FileItem item = new FileItem
+            {
+                Name = Path.GetFileName(entry),
+                Icon = entry.EndsWith(Path.DirectorySeparatorChar.ToString()) ? "1.png" : "1.png" // 根据是文件还是文件夹设置图标路径
+            };
+            items.Add(item);
+        }
+
+        // 清空ListBox中的项
+        _fileListBox.Items.Clear();
+
+        // 将项添加到ListBox中
+        foreach (var item in items)
+        {
+            _fileListBox.Items.Add(item);
+        }
+    }
+
+
+    private void LoadFileList3()
+    {
+        string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string[] fileSystemEntries = Directory.GetFileSystemEntries(directoryPath);
+
+        List<FileItem> items = new List<FileItem>();
+
+        foreach (string entry in fileSystemEntries)
+        {
+            FileItem item = new FileItem
+            {
+                Name = Path.GetFileName(entry),
+                Icon = entry.EndsWith(Path.DirectorySeparatorChar.ToString()) ? "1.png" : "1.png" // 根据是文件还是文件夹设置图标路径
+            };
+
+            _fileListBox.Items.Add(item);
+        }
+
+       
+    }
+
+
 
 
     private void InitializeComponent()
