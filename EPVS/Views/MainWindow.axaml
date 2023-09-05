@@ -17,7 +17,7 @@
 
 				<!-- 上部分内容top -->
 				<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0">
-					<Button Content="后退" FontSize="16" Margin="10"/>
+					<Button Content="后退" FontSize="16" Margin="10" Click="ShowPopupOnClick"/>
 					<Button Content="前进" FontSize="16" Margin="10"/>
 					<Button Content="上级" FontSize="16" Margin="10"/>
 					<TextBox Width="500" Margin="10"/>
@@ -75,7 +75,7 @@
 						
 						<!-- bot_right -->
 						<TextBlock Text="bot_right" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
-
+							
 
 
 
