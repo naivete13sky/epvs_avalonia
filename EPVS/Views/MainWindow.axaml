@@ -22,8 +22,30 @@
 				<GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="LightGray"/>
 
 				<!-- 下部分内容bot -->
-				<TextBlock Text="Welcome to Avalonia!cc" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>
 				
+					<Grid Grid.Row="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+
+						<!-- bot_left -->
+						<!--<TextBlock Text="Welcome to Avalonia!cc" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>-->
+						<TextBlock Text="bot_left" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
+
+						<!-- 分割线 -->						
+						<GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="LightGray"/>
+						
+						<!-- bot_right -->
+						<TextBlock Text="bot_right" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+
+
+
+
+
+					</Grid>
 				
 				
 				
