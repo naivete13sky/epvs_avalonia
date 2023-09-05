@@ -18,7 +18,8 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         _fileListBox = this.FindControl<ListBox>("fileListBox");
-        LoadFileList();
+        //LoadFileList();
+        LoadFileSystemEntries();
 
     }
 
@@ -30,6 +31,17 @@ public partial class MainWindow : Window
         foreach (string file in files)
         {
             _fileListBox.Items.Add(Path.GetFileName(file));
+        }
+    }
+
+    private void LoadFileSystemEntries()
+    {
+        string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string[] fileSystemEntries = Directory.GetFileSystemEntries(directoryPath);
+
+        foreach (string entry in fileSystemEntries)
+        {
+            _fileListBox.Items.Add(Path.GetFileName(entry));
         }
     }
 
