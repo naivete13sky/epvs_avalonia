@@ -31,10 +31,30 @@
 						</Grid.ColumnDefinitions>
 
 
-						<!-- bot_left -->
-						<!--<TextBlock Text="Welcome to Avalonia!cc" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>-->
-						<TextBlock Text="bot_left" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
+						<!-- bot_left -->						
+						<!--<TextBlock Text="bot_left" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>-->
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height="*"/>
+								</Grid.RowDefinitions>
+								
+								<!-- bot_left_top -->
+								<TextBlock Text="bot_left_top" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
 
+								<!-- 分割线 -->
+								<GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="LightGray"/>
+
+
+								<!-- bot_left_bot -->
+								<TextBlock Text="bot_left_bot" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2"/>
+								
+							</Grid>
+						
+						
+						
+						
 						<!-- 分割线 -->						
 						<GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="LightGray"/>
 						
