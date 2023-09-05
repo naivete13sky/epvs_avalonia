@@ -1,4 +1,7 @@
-﻿namespace EPVS.ViewModels;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+
+namespace EPVS.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {

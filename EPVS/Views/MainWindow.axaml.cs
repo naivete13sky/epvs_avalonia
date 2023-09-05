@@ -1,15 +1,37 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Data;
 using Avalonia.Markup.Xaml;
+using EPVS.ViewModels;
+using Avalonia.Interactivity;
+using System;
+using System.IO;
+using System.Linq;
+
 namespace EPVS.Views;
 
 public partial class MainWindow : Window
 {
+    private ListBox _fileListBox;
     public MainWindow()
     {
         InitializeComponent();
+
+        _fileListBox = this.FindControl<ListBox>("fileListBox");
+        LoadFileList();
+
     }
 
+    private void LoadFileList()
+    {
+        string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string[] files = Directory.GetFiles(directoryPath);
+
+        foreach (string file in files)
+        {
+            _fileListBox.Items.Add(Path.GetFileName(file));
+        }
+    }
 
 
     private void InitializeComponent()
