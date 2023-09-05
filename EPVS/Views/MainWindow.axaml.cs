@@ -138,17 +138,6 @@ public partial class MainWindow : Window
     }
 
 
-    private void OnItemTapped(object sender, RoutedEventArgs e)
-    {
-        // 获取选中的项目
-        string selectedItem = (sender as TextBlock)?.Text;
-
-        // 在这里执行单击事件的处理逻辑
-        if (!string.IsNullOrEmpty(selectedItem))
-        {
-            // 在这里处理单击事件，可以使用 selectedItem 变量来获取选中的项目的值
-        }
-    }
 
     private void OnItemClicked(object sender, RoutedEventArgs e)
     {
@@ -157,17 +146,15 @@ public partial class MainWindow : Window
         {
             string selectedItem = clickedButton.Content.ToString();
 
-            // 在这里执行单击事件的处理逻辑，可以使用 selectedItem 变量来获取选中的项目的值
-            // 输出到控制台
-            Console.WriteLine("cc");
-            System.Diagnostics.Debug.WriteLine("cc");
+            // 在这里执行单击事件的处理逻辑，可以使用 selectedItem 变量来获取选中的项目的值            
+
             // 创建一个弹窗
             var dialog = new Window
             {
                 Title = "后退弹窗",
                 Content = new TextBlock
                 {
-                    Text = "后退按钮被点击！",
+                    Text = selectedItem,
                     FontSize = 16,
                     HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                     VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center,
